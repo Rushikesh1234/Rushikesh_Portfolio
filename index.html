@@ -2,335 +2,518 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rushikesh Khamkar - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
   <style>
-    /* Reset and base */
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9;
+      background-color: #f0f4ff;
       color: #333;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
-    a {
-      color: #1a73e8;
-      text-decoration: none;
+
+    header {
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    /* Navbar */
-    nav {
-      position: fixed;
-      width: 100%;
-      background: #222;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-    nav ul {
-      list-style: none;
+
+    header h1 {
       margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.2rem;
-    }
-    nav ul li {
-      padding: 1rem 0;
-    }
-    nav ul li a {
-      color: #eee;
-      font-weight: 600;
-      padding: 1rem 0.5rem;
-      display: block;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #1a73e8;
-      border-bottom: 2px solid #1a73e8;
-    }
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 80px auto 40px; /* leave space for fixed navbar */
-      padding: 0 1rem;
-    }
-    h1, h2, h3 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
-      color: #111;
-    }
-    h1 {
       font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 0.2rem;
     }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
     h2 {
-      border-bottom: 3px solid #1a73e8;
-      padding-bottom: 0.3rem;
-    }
-    p {
-      margin-bottom: 1rem;
-    }
-    /* About */
-    #about p {
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 1.1rem;
-      color: #444;
-    }
-    /* Skills & Tools grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .skill-item {
-      background: white;
-      padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
       text-align: center;
-      font-weight: 600;
-      font-size: 0.95rem;
+      color: #333;
     }
-    /* Experience, Education */
-    .job, .edu {
-      background: white;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+    /* Experience Cards */
+    .experience-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
-    .job h3, .edu h3 {
-      margin: 0 0 0.3rem 0;
-      color: #1a73e8;
+
+    .exp-card {
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
     }
-    .job .date, .edu .date {
-      font-size: 0.9rem;
-      color: #777;
+
+    .exp-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-    .job ul {
-      margin: 0;
-      padding-left: 1.2rem;
+    
+    .icon-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+    .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .summary {
+      font-size: 0.95rem;
       color: #444;
     }
-    .job ul li {
-      margin-bottom: 0.4rem;
+
+    .maine { background-color: #e8f0fe; }
+    .ttu { background-color: #e7f6ec; }
+    .accenture { background-color: #f3e8fd; }
+.db-monitor { background-color: #fff4e5; }          /* Light warm yellow */
+.emotion-recognition { background-color: #fde8f0; } /* Light pink */
+.asl-detection { background-color: #e8f6fd; }       /* Very light cyan */
+.aptizen { background-color: #f0f4e8; }             /* Light pastel green */
+
+    /* Skills & Tools */
+    #skills-tools {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .skills-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+  .skills-card {
+    background-color: var(--card-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 320px;
+    width: 100%;
+    padding: 1.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  .card-header .icon {
+    font-size: 1.6rem;
+  }
+  .skills-list {
+    margin: 0;
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.5;
+  }
+ 
+  .skill:hover {
+    background-color: #d0e7ff;
+  }
+  @media (max-width: 992px) {
+    .skills-cards-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-    /* Projects */
-    .project-list {
-      list-style: none;
-      padding-left: 0;
+  }
+  @media (max-width: 600px) {
+    .skills-cards-container {
+      grid-template-columns: 1fr;
     }
-    .project-list li {
+    .skills-list {
+      justify-content: center;
+    }
+    .skill {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+  }
+
+
+    /* Education */
+    .education {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .edu-item {
       background: white;
-      margin-bottom: 1rem;
-      padding: 1rem 1.2rem;
+      border-left: 5px solid #4b6cb7;
+      padding: 1rem 1.5rem;
       border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .project-list li:hover {
-      background-color: #eaf3ff;
-    }
-    .project-list a {
-      font-weight: 700;
+
+    .edu-item h3 {
+      margin: 0;
       font-size: 1.1rem;
     }
-    /* Footer */
+
+    .edu-item p {
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
     footer {
+      background-color: #222;
+      color: #ccc;
       text-align: center;
       padding: 2rem 1rem;
-      color: #666;
       font-size: 0.9rem;
     }
-    /* Responsive tweaks */
-    @media(max-width:600px) {
-      h1 {
+
+    footer a {
+      color: #4b9be0;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
         font-size: 2rem;
       }
-      nav ul {
-        gap: 0.7rem;
-      }
-      .skills-grid {
-        grid-template-columns: repeat(auto-fill,minmax(90px,1fr));
-      }
     }
-  </style>
+
+header .overview {
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e0e6f3; /* lighter text to fit header */
+  line-height: 1.5;
+}
+header .links {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #cfd8ff;
+}
+
+header .links a {
+  color: #a3b0ff; /* subtle lighter blue */
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 6px;
+}
+
+header .links a:hover {
+  text-decoration: underline;
+  color: #d1dbff;
+}  </style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#about" class="active">About</a></li>
-    <li><a href="#skills">Skills & Tools</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-
-  <section id="about">
+  <!-- Hero Section -->
+  <header>
     <h1>Rushikesh Khamkar</h1>
-    <p style="text-align:center; max-width:700px; margin:auto; margin-bottom:1rem;">
-      Software Engineer with 4+ years of experience designing scalable backend systems and microservices. I deliver clean, testable code and collaborate effectively with cross-functional teams to build reliable, high-performance software. Currently deepening my knowledge in AI-driven workflow automation, process optimization, and scalable cloud architecture using AWS.
-    </p>
-    <p style="text-align:center; max-width:700px; margin:auto; font-style: italic; color: #555;">
-      I enjoy building systems that don’t just work—but scale, recover gracefully, and empower the teams that depend on them.
-    </p>
-    <p style="text-align:center; margin-top:1rem;">
-      📧 <a href="mailto:rushi.khamkar1234@gmail.com">rushi.khamkar1234@gmail.com</a> &nbsp; | &nbsp; 📞 +1 806 760 0163 &nbsp; | &nbsp; 
-      <a href="https://linkedin.com/in/khamkar-rushikesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp; | &nbsp; 
-      <a href="https://github.com/Rushikesh1234" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
-  </section>
+	<p class="email" style="margin-top: 0.2rem; font-size: 1rem; color: #fff;">
+    📧 rushi.khamkar1234@gmail.com
+  </p>
+    <p>Backend Engineer • Data Integrator • System Optimizer</p>
+<p class="overview">
+    Software Engineer with 4+ years of experience building scalable backend systems and data-driven platforms. I thrive at the intersection of clean architecture, system resilience, and real-world impact—whether it’s optimizing APIs, streamlining data pipelines, or integrating AI into enterprise workflows. Passionate about building software that scales, recovers, and empowers teams.
+  </p>
+  <p class="links">
+  <a href="https://linkedin.com/in/khamkar-rushikesh" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; color: #a3b0ff; text-decoration: none;">
+    <img src="https://img.icons8.com/ios-filled/24/0000FF/linkedin.png" alt="LinkedIn Icon" width="20" height="20" />
+    LinkedIn
+  </a> •
+  <a href="https://github.com/Rushikesh1234" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; color: #a3b0ff; text-decoration: none;">
+    <img src="https://img.icons8.com/ios-filled/24/000000/github.png" alt="GitHub Icon" width="20" height="20" />
+    GitHub
+  </a>
+<a href="https://github.com/user-attachments/files/20969098/Rushikesh.Khamkar.Resume.pdf" download title="Download Resume" style="display: inline-flex; align-items: center; gap: 6px; color: #a3b0ff; text-decoration: none;">
+      <img src="https://img.icons8.com/ios-filled/24/0000FF/download--v1.png" alt="Download Resume Icon" width="20" height="20" />
+      Download Resume
+    </a>
+</p>
+  </header>
 
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-      <div class="skill-item">Java</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">PHP</div>
-      <div class="skill-item">C++</div>
-      <div class="skill-item">Apex</div>
-      <div class="skill-item">Bash</div>
-      <div class="skill-item">PowerShell</div>
-      <div class="skill-item">SQL</div>
-      <div class="skill-item">MS-SQL (T-SQL)</div>
-      <div class="skill-item">Oracle</div>
-      <div class="skill-item">SOQL</div>
-      <div class="skill-item">Salesforce (Apex, Flows, LWC)</div>
-      <div class="skill-item">PeopleSoft ERP</div>
-      <div class="skill-item">Informatica</div>
-      <div class="skill-item">AWS</div>
-      <div class="skill-item">Distributed Systems</div>
-      <div class="skill-item">RESTful APIs</div>
-      <div class="skill-item">Microservices</div>
-      <div class="skill-item">Docker</div>
-      <div class="skill-item">Monitoring & Logging</div>
-      <div class="skill-item">Debugging & Fault Tolerance</div>
-      <div class="skill-item">Performance Tuning</div>
-      <div class="skill-item">VSCode & IntelliJ</div>
-      <div class="skill-item">Postman & SQL Developer</div>
-      <div class="skill-item">GitHub</div>
-    </div>
-  </section>
-
+  <!-- Experience -->
   <section id="experience">
-    <h2>Experience</h2>
-    <div class="job">
-      <h3>Application Developer — University of Maine System</h3>
-      <p class="date">Nov 2023 - Present | Portland, ME</p>
-      <ul>
-        <li>Architected and optimized backend systems and distributed data pipelines, enhancing throughput and reducing latency for enterprise-system.</li>
-        <li>Developed RESTful APIs and integrated Oracle databases to enable scalable, secure internal data services.</li>
-        <li>Refactored legacy Python and PHP applications, improving system reliability, observability, and maintainability.</li>
-        <li>Integrated large language models (LLMs) to automate data processing, significantly reducing manual workloads.</li>
-        <li>Automated ETL workflows with Informatica, cutting failure rates by 40% and boosting job efficiency.</li>
-        <li>Collaborated with cross-functional teams on performance profiling, root cause analysis, and scalable architecture improvements.</li>
-      </ul>
+  <h2>Experience</h2>
+  <div class="experience-cards">
+    <div class="exp-card maine">
+      <img src="logos/University_of_Maine.svg" alt="University of Maine System Logo" class="icon-img">
+      <div class="title">Application Developer<br>University of Maine System</div>
+      <div class="summary">
+        Optimized backend and ETL pipelines, integrated LLMs for automation, and rebuilt legacy apps to boost reliability and throughput.
+      </div>
     </div>
-    <div class="job">
-      <h3>Software Developer — Texas Tech University</h3>
-      <p class="date">Sep 2021 - Oct 2023 | Lubbock, TX</p>
-      <ul>
-        <li>Designed and maintained backend integrations across ERP systems and third-party platforms using REST APIs and data pipelines, enabling reliable data exchange across 150+ services.</li>
-        <li>Improved backend application logic and API handlers to reduce failure rates and increase maintainability across student and admin services.</li>
-        <li>Built scalable data flows using Informatica and API integrations to synchronize records across Salesforce, Oracle, and PeopleSoft.</li>
-        <li>Developed comprehensive test suites (unit, integration, E2E) to ensure reliability and accuracy of backend services in critical workflows.</li>
-        <li>Optimized SQL and SOQL queries for high-traffic ERP workflows, reducing response times by 50% and improving system efficiency.</li>
-      </ul>
+    <div class="exp-card ttu">
+      <img src="logos/Texas_Tech_University.svg" alt="Texas Tech Logo" class="icon-img">
+      <div class="title">Software Developer<br>Texas Tech University</div>
+      <div class="summary">
+        Built APIs and data pipelines for ERP systems, improved backend performance, and optimized database queries for scale.
+      </div>
     </div>
-    <div class="job">
-      <h3>Associate Software Engineer — Accenture</h3>
-      <p class="date">Aug 2019 – Aug 2021 | Mumbai, India</p>
-      <ul>
-        <li>Developed backend services in Apex and integrated with external REST services to support CRM operations for over 38 million users.</li>
-        <li>Built reusable middleware frameworks and APIs for Salesforce-to-enterprise data exchange, ensuring high availability and data integrity.</li>
-        <li>Implemented backend process automation (Apex, Flows, Triggers), reducing business process latency and support tickets by 60%.</li>
-        <li>Contributed to refactoring backend workflows and API logic, improving performance and reducing code complexity across key modules.</li>
-        <li>Performed infrastructure diagnostics and incident resolution for distributed integrations in client-facing environments.</li>
-      </ul>
+    <div class="exp-card accenture">
+      <img src="logos/Accenture.svg" alt="Accenture Logo" class="icon-img">
+      <div class="title">Associate Software Engineer<br>Accenture</div>
+      <div class="summary">
+        Created Apex services for CRM, automated backend workflows, and ensured data integrity across enterprise systems.
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="edu">
-      <h3>Master’s degree in Computer Science</h3>
-      <p class="date">Texas Tech University, Lubbock, TX | Aug 2021 – May 2023</p>
+
+<!-- Education -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="experience-cards">
+    <div class="exp-card maine">
+      <img src="logos/Texas_Tech_University.svg" alt="Texas Tech University Logo" class="icon-img" />
+      <div class="title">MS in Computer Science<br>Texas Tech University — 2023</div>
+      <div class="summary">Graduate studies focused on advanced computer science topics and research.</div>
     </div>
-    <div class="edu">
-      <h3>Bachelor’s degree in Computer Engineering</h3>
-      <p class="date">Pune University, Pune, India | Jun 2016 – Jun 2019</p>
+
+    <div class="exp-card ttu">
+      <img src="logos/Savitribai_Phule_Pune_University.png" alt="University of Pune Logo" class="icon-img" />
+      <div class="title">B.Tech in Computer Engineering<br>University of Pune — 2019</div>
+      <div class="summary">Undergraduate degree specializing in software engineering and computer systems.</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul class="project-list">
-      <li>
-        <a href="https://github.com/Rushikesh1234/ConsultIQ-AI" target="_blank" rel="noopener noreferrer">
-          ConsultIQ - Multi-Agent LLM System for Document Reasoning
-        </a>
-        <p>AI-powered assistant extracting insights from PDFs using OpenAI, LangChain, embedding-based vector search, and a Streamlit frontend for interactive UX.</p>
-      </li>
-      <li>
-        <a href="https://github.com/Rushikesh1234/LLM-Powered-Oracle-Database-Assistant" target="_blank" rel="noopener noreferrer">
-          LLM-Powered Oracle Database Assistant
-        </a>
-        <p>AI assistant translating natural language to Oracle SQL using local LLMs, Python, and Streamlit with secure role-based access control.</p>
-      </li>
-      <li>
-        <a href="https://github.com/Rushikesh1234/dropbox-backend" target="_blank" rel="noopener noreferrer">
-          Cloud Storage System (Dropbox Clone) using AWS
-        </a>
-        <p>Scalable cloud storage backend built with AWS (S3, RDS, EC2), secure REST APIs, and a Streamlit frontend for rapid prototyping and testing.</p>
-      </li>
-    </ul>
-  </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="experience-cards">
+    <div class="exp-card maine">
+      <img src="https://img.icons8.com/ios-filled/100/parse-from-clipboard.png" alt="ConsultIQ Document AI" class="icon-img" />
+      <div class="title">ConsultIQ - Multi-Agent LLM System for Document Reasoning</div>
+      <div class="summary">
+        AI assistant extracts insights from PDFs using OpenAI, LangChain, and embedding vector search.<br>
+        Multi-agent system dynamically plans and executes subtasks for scalable document retrieval.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/ConsultIQ-AI" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
 
-</div>
+    <div class="exp-card ttu">
+      <img src="https://img.icons8.com/ios-filled/100/database.png" alt="LLM Oracle Assistant" class="icon-img" />
+      <div class="title">LLM-Powered Oracle Database Assistant</div>
+      <div class="summary">
+        AI assistant translates natural language into Oracle SQL using local LLMs and Python.<br>
+        Secure role-based access control with interactive Streamlit UI for user-friendly queries.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/LLM-Powered-Oracle-Database-Assistant" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
 
-<footer>
-  &copy; 2025 Rushikesh Khamkar. All rights reserved.
-</footer>
+    <div class="exp-card accenture">
+      <img src="https://img.icons8.com/ios-filled/100/cloud-storage.png" alt="Cloud Storage Project" class="icon-img" />
+      <div class="title">Cloud Storage System (Dropbox Clone) using AWS</div>
+      <div class="summary">
+        Scalable cloud storage system using AWS S3, RDS, EC2 with secure REST APIs and JWT authentication.<br>
+        Lightweight Streamlit frontend for API integration and rapid backend prototyping.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/dropbox-backend" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
 
-<script>
-  // Highlight active nav link on scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav ul li a');
+	<div class="exp-card db-monitor">
+      <img src="https://img.icons8.com/ios-filled/100/combo-chart.png" alt="Database Monitoring Dashboard" class="icon-img" />
+      <div class="title">Database Performance Monitoring and Query Analytics Dashboard</div>
+      <div class="summary">
+        Real-time Oracle DB monitoring with FastAPI and SQLAlchemy capturing key metrics.<br>
+        Integrated Prometheus and Grafana for dashboards and alerting, improving incident response by 60%.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/DB-Monitor" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
+    <div class="exp-card emotion-recognition">
+      <img src="https://img.icons8.com/ios-filled/100/happy--v1.png" alt="Emotion Recognition Project" class="icon-img" />
+      <div class="title">Human-in-the-loop Design with CNN and LSTM Model for Emotion Recognition</div>
+      <div class="summary">
+        Built CNN & LSTM model for emotion prediction with user feedback loop to improve accuracy.<br>
+        Designed UI for prediction display and feedback collection without retraining the model.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/Human-in-the-loop-Design-with-CNN-and-LSTM-Model-for-Emotion-Recognition" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="exp-card asl-detection">
+      <img src="https://img.icons8.com/ios-filled/50/sign-language-k.png" alt="ASL Detection Project" class="icon-img" />
+      <div class="title">American Sign Language Detection using Machine Learning</div>
+      <div class="summary">
+        Developed CNN model for ASL alphabet detection using Kaggle dataset.<br>
+        Extended work with live webcam sign language interpretation using transfer learning.
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com/Rushikesh1234/American-Sign-Language-Detection-using-Machine-Learning" target="_blank" rel="noopener" style="color:#007bff; text-decoration: none;">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="exp-card aptizen">
+      <img src="https://img.icons8.com/ios-filled/50/exam.png" alt="Emotion Recognition Project" class="icon-img" />
+      <div class="title">Aptizen - Online Exam System</div>
+      <div class="summary">
+        Designed online exam app for students & professors with remote access and Excel uploads.<br>
+        Connected Android app to local SQL Server via PHP for database interactions.
+      </div>
+      <div style="margin-top: 1rem;">
+             </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Skills & Tools -->
+  <section id="skills-tools" style="padding: 2rem;">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Skills & Tools</h2>
+  <div class="skills-cards-container">
+    <div class="skills-card" style="--card-color:#cce5ff;">
+      <div class="card-header" style="color:#007bff;">
+        <span class="icon">🖥️</span>
+        <h3>Programming Languages</h3>
+      </div>
+      <p class="skills-list">
+        Java, Python, PHP, C++, Apex, Bash, PowerShell, SQL (T-SQL, SOQL)
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#d4f1d4;">
+      <div class="card-header" style="color:#28a745;">
+        <span class="icon">🗄️</span>
+        <h3>Databases & Query Languages</h3>
+      </div>
+      <p class="skills-list">
+        MS-SQL (T-SQL), Oracle, SOQL, PostgreSQL, SQLite, Chroma Vector DB, SQLAlchemy, oracledb (Python Oracle client)
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#fff3cd;">
+      <div class="card-header" style="color:#ffc107;">
+        <span class="icon">☁️</span>
+        <h3>Cloud & Platforms</h3>
+      </div>
+      <p class="skills-list">
+        Salesforce (Apex, Flows, Triggers, LWC), AWS (S3, EC2, RDS), PeopleSoft ERP, Informatica, Streamlit, LangChain, Ollama (Local LLMs)
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#e2e3ff;">
+      <div class="card-header" style="color:#6f42c1;">
+        <span class="icon">⚙️</span>
+        <h3>Backend Development & Architecture</h3>
+      </div>
+      <p class="skills-list">
+        RESTful APIs, Microservices, Distributed Systems, Middleware Frameworks, API Integrations, Backend Process Automation, Secure Role-Based Access Control, Authentication (JWT), Token-based Authorization, System Design, Scalable Architecture, Legacy Code Refactoring
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#f8d7da;">
+      <div class="card-header" style="color:#dc3545;">
+        <span class="icon">🧠</span>
+        <h3>AI & Machine Learning</h3>
+      </div>
+      <p class="skills-list">
+        LLM Integration (OpenAI, LangChain, Ollama), AI-Powered Document Parsing, Natural Language to SQL Translation, Vector Search / Embedding-based Retrieval, Multi-Agent LLM Systems, Fine-tuning on domain-specific data, Semantic Search, Consulting Strategy Generation via LLMs
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#d1ecf1;">
+      <div class="card-header" style="color:#17a2b8;">
+        <span class="icon">🔄</span>
+        <h3>ETL & Data Pipelines</h3>
+      </div>
+      <p class="skills-list">
+        Informatica (ETL tool), Oracle Data Integration, Data Modeling, Data Synchronization, ETL Workflow Automation, Data Pipeline Optimization
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#f1f1f1;">
+      <div class="card-header" style="color:#6c757d;">
+        <span class="icon">🔍</span>
+        <h3>Performance, Observability & Reliability</h3>
+      </div>
+      <p class="skills-list">
+        Monitoring, Logging, Debugging, Fault Tolerance, Performance Profiling, Performance Tuning (SQL, API, Systems), Incident Resolution, Root Cause Analysis, Code Reviews
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#e9ecef;">
+      <div class="card-header" style="color:#343a40;">
+        <span class="icon">🧪</span>
+        <h3>Testing</h3>
+      </div>
+      <p class="skills-list">
+        Unit Testing, Integration Testing, End-to-End (E2E) Testing, Backend Test Suites
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#fff0f6;">
+      <div class="card-header" style="color:#d6336c;">
+        <span class="icon">🧰</span>
+        <h3>Tools & IDEs</h3>
+      </div>
+      <p class="skills-list">
+        VSCode, IntelliJ, Postman, SQL Developer, GitHub
+      </p>
+    </div>
+
+    <div class="skills-card" style="--card-color:#fff3d4;">
+      <div class="card-header" style="color:#212529;">
+        <span class="icon">🤝</span>
+        <h3>Soft Skills & Methodologies</h3>
+      </div>
+      <p class="skills-list">
+        Critical Thinking, Systems Thinking, Technical Ownership, Cross-Team Collaboration, Attention to Detail
+      </p>
+    </div>
+  </div>
+</section>
+	
+
+  <!-- Contact / Footer -->
+  <footer>
+    <p>© 2025 Rushikesh Khamkar. Built with Chatgpt.</p>
+    <p>Email: <a href="mailto:rushi.khamkar1234@gmail.com">rushi.khamkar1234@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/khamkar-rushikesh/" target="_blank">linkedin.com/in/khamkar-rushikesh/</a></p>
+    <p>GitHub: <a href="https://github.com/Rushikesh1234" target="_blank">github.com/Rushikesh1234</a></p>
+  </footer>
 
 </body>
 </html>
