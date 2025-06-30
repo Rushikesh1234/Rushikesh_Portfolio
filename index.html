@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rushikesh Khamkar - Portfolio</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: #222;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.2rem;
+    }
+    nav ul li {
+      padding: 1rem 0;
+    }
+    nav ul li a {
+      color: #eee;
+      font-weight: 600;
+      padding: 1rem 0.5rem;
+      display: block;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #1a73e8;
+      border-bottom: 2px solid #1a73e8;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 80px auto 40px; /* leave space for fixed navbar */
+      padding: 0 1rem;
+    }
+    h1, h2, h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #111;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+    h2 {
+      border-bottom: 3px solid #1a73e8;
+      padding-bottom: 0.3rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    /* About */
+    #about p {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    /* Skills & Tools grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .skill-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    /* Experience, Education */
+    .job, .edu {
+      background: white;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .job h3, .edu h3 {
+      margin: 0 0 0.3rem 0;
+      color: #1a73e8;
+    }
+    .job .date, .edu .date {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+    .job ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #444;
+    }
+    .job ul li {
+      margin-bottom: 0.4rem;
+    }
+    /* Projects */
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .project-list li {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+    .project-list li:hover {
+      background-color: #eaf3ff;
+    }
+    .project-list a {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    /* Responsive tweaks */
+    @media(max-width:600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 0.7rem;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill,minmax(90px,1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#skills">Skills & Tools</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <section id="about">
+    <h1>Rushikesh Khamkar</h1>
+    <p style="text-align:center; max-width:700px; margin:auto; margin-bottom:1rem;">
+      Software Engineer with 4+ years of experience designing scalable backend systems and microservices. I deliver clean, testable code and collaborate effectively with cross-functional teams to build reliable, high-performance software. Currently deepening my knowledge in AI-driven workflow automation, process optimization, and scalable cloud architecture using AWS.
+    </p>
+    <p style="text-align:center; max-width:700px; margin:auto; font-style: italic; color: #555;">
+      I enjoy building systems that don’t just work—but scale, recover gracefully, and empower the teams that depend on them.
+    </p>
+    <p style="text-align:center; margin-top:1rem;">
+      📧 <a href="mailto:rushi.khamkar1234@gmail.com">rushi.khamkar1234@gmail.com</a> &nbsp; | &nbsp; 📞 +1 806 760 0163 &nbsp; | &nbsp; 
+      <a href="https://linkedin.com/in/khamkar-rushikesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp; | &nbsp; 
+      <a href="https://github.com/Rushikesh1234" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Java</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">PHP</div>
+      <div class="skill-item">C++</div>
+      <div class="skill-item">Apex</div>
+      <div class="skill-item">Bash</div>
+      <div class="skill-item">PowerShell</div>
+      <div class="skill-item">SQL</div>
+      <div class="skill-item">MS-SQL (T-SQL)</div>
+      <div class="skill-item">Oracle</div>
+      <div class="skill-item">SOQL</div>
+      <div class="skill-item">Salesforce (Apex, Flows, LWC)</div>
+      <div class="skill-item">PeopleSoft ERP</div>
+      <div class="skill-item">Informatica</div>
+      <div class="skill-item">AWS</div>
+      <div class="skill-item">Distributed Systems</div>
+      <div class="skill-item">RESTful APIs</div>
+      <div class="skill-item">Microservices</div>
+      <div class="skill-item">Docker</div>
+      <div class="skill-item">Monitoring & Logging</div>
+      <div class="skill-item">Debugging & Fault Tolerance</div>
+      <div class="skill-item">Performance Tuning</div>
+      <div class="skill-item">VSCode & IntelliJ</div>
+      <div class="skill-item">Postman & SQL Developer</div>
+      <div class="skill-item">GitHub</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Application Developer — University of Maine System</h3>
+      <p class="date">Nov 2023 - Present | Portland, ME</p>
+      <ul>
+        <li>Architected and optimized backend systems and distributed data pipelines, enhancing throughput and reducing latency for enterprise-system.</li>
+        <li>Developed RESTful APIs and integrated Oracle databases to enable scalable, secure internal data services.</li>
+        <li>Refactored legacy Python and PHP applications, improving system reliability, observability, and maintainability.</li>
+        <li>Integrated large language models (LLMs) to automate data processing, significantly reducing manual workloads.</li>
+        <li>Automated ETL workflows with Informatica, cutting failure rates by 40% and boosting job efficiency.</li>
+        <li>Collaborated with cross-functional teams on performance profiling, root cause analysis, and scalable architecture improvements.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Software Developer — Texas Tech University</h3>
+      <p class="date">Sep 2021 - Oct 2023 | Lubbock, TX</p>
+      <ul>
+        <li>Designed and maintained backend integrations across ERP systems and third-party platforms using REST APIs and data pipelines, enabling reliable data exchange across 150+ services.</li>
+        <li>Improved backend application logic and API handlers to reduce failure rates and increase maintainability across student and admin services.</li>
+        <li>Built scalable data flows using Informatica and API integrations to synchronize records across Salesforce, Oracle, and PeopleSoft.</li>
+        <li>Developed comprehensive test suites (unit, integration, E2E) to ensure reliability and accuracy of backend services in critical workflows.</li>
+        <li>Optimized SQL and SOQL queries for high-traffic ERP workflows, reducing response times by 50% and improving system efficiency.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Associate Software Engineer — Accenture</h3>
+      <p class="date">Aug 2019 – Aug 2021 | Mumbai, India</p>
+      <ul>
+        <li>Developed backend services in Apex and integrated with external REST services to support CRM operations for over 38 million users.</li>
+        <li>Built reusable middleware frameworks and APIs for Salesforce-to-enterprise data exchange, ensuring high availability and data integrity.</li>
+        <li>Implemented backend process automation (Apex, Flows, Triggers), reducing business process latency and support tickets by 60%.</li>
+        <li>Contributed to refactoring backend workflows and API logic, improving performance and reducing code complexity across key modules.</li>
+        <li>Performed infrastructure diagnostics and incident resolution for distributed integrations in client-facing environments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu">
+      <h3>Master’s degree in Computer Science</h3>
+      <p class="date">Texas Tech University, Lubbock, TX | Aug 2021 – May 2023</p>
+    </div>
+    <div class="edu">
+      <h3>Bachelor’s degree in Computer Engineering</h3>
+      <p class="date">Pune University, Pune, India | Jun 2016 – Jun 2019</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul class="project-list">
+      <li>
+        <a href="https://github.com/Rushikesh1234/ConsultIQ-AI" target="_blank" rel="noopener noreferrer">
+          ConsultIQ - Multi-Agent LLM System for Document Reasoning
+        </a>
+        <p>AI-powered assistant extracting insights from PDFs using OpenAI, LangChain, embedding-based vector search, and a Streamlit frontend for interactive UX.</p>
+      </li>
+      <li>
+        <a href="https://github.com/Rushikesh1234/LLM-Powered-Oracle-Database-Assistant" target="_blank" rel="noopener noreferrer">
+          LLM-Powered Oracle Database Assistant
+        </a>
+        <p>AI assistant translating natural language to Oracle SQL using local LLMs, Python, and Streamlit with secure role-based access control.</p>
+      </li>
+      <li>
+        <a href="https://github.com/Rushikesh1234/dropbox-backend" target="_blank" rel="noopener noreferrer">
+          Cloud Storage System (Dropbox Clone) using AWS
+        </a>
+        <p>Scalable cloud storage backend built with AWS (S3, RDS, EC2), secure REST APIs, and a Streamlit frontend for rapid prototyping and testing.</p>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Rushikesh Khamkar. All rights reserved.
+</footer>
+
+<script>
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
