@@ -92,6 +92,34 @@
   margin-right: auto;
 }
 
+	  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 400px; /* 👈 control zoom size */
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
 
     .title {
       font-weight: 600;
@@ -251,7 +279,7 @@ header .links a:hover {
 
   <!-- Hero Section -->
   <header>
-	  <a href="logos/Rushi-Photo.jpeg" target="_blank"<img src="logos/Rushi-Photo.jpeg" alt="Rushikesh Khamkar Profile Photo" class="profile-pic" /></a>
+	  <img src="logos/Rushi-Photo.jpeg" alt="Rushikesh Khamkar Profile Photo" class="profile-pic" />
     <h1>Rushikesh Khamkar</h1>
 	<p class="email" style="margin-top: 0.2rem; font-size: 1rem; color: #fff;">
     📧 rushi.khamkar1234@gmail.com
@@ -542,6 +570,34 @@ header .links a:hover {
     <p>GitHub: <a href="https://github.com/Rushikesh1234" target="_blank">github.com/Rushikesh1234</a></p>
   </footer>
 
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+	
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const profilePic = document.querySelector(".profile-pic");
+  const closeBtn = document.querySelector(".close");
+
+  profilePic.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  // Close when clicking outside image
+  modal.onclick = function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+	
 </body>
 </html>
 
